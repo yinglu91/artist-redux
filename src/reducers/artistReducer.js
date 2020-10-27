@@ -9,7 +9,7 @@ import {
 const initialState = {
   artist: null,
   tracks: [],
-  currentTrackName: null,
+  currentPreviewUrl: null,
   isPlaying: false,
   audioPlayer: new Audio(),
 
@@ -31,7 +31,7 @@ const artistReducer = (state = initialState, action) => {
       state.audioPlayer = new Audio(payload);
       state.audioPlayer.play();
 
-      return { ...state, currentTrackName: payload,  isPlaying: true};
+      return { ...state, currentPreviewUrl: payload,  isPlaying: true};
 
     case TOGGLE_PLAY:
       if (state.isPlaying) {
@@ -47,7 +47,7 @@ const artistReducer = (state = initialState, action) => {
         state.audioPlayer.pause();
       }
       
-      return { ...state, currentTrackName: null, isPlaying: false };
+      return { ...state, currentPreviewUrl: null, isPlaying: false };
       
     default:
       return state;

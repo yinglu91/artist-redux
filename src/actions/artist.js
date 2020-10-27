@@ -2,15 +2,16 @@ import axios from 'axios';
 import {
   GET_ARTIST,
   ARTIST_ERROR,
+
   PLAY_TRACK,
   TOGGLE_PLAY,
   RESET_AUDIO
 } from './types';
 
-export const playTrack = (trackName) => {
+export const playTrack = (previewUrl) => {
    return {
     type: PLAY_TRACK,
-    payload: trackName
+    payload: previewUrl
   };
 }
 
@@ -26,8 +27,9 @@ export const resetAudio = () => {
   };
 }
 
-// get artist
-// 'https://spotify-api-wrapper.appspot.com/artist/Maria Callas'
+// https://spotify-api-wrapper.appspot.com/artist/Maria Callas
+// https://spotify-api-wrapper.appspot.com/artist/0bjdfjE8XbLa2Odstu6E1E/top-tracks
+
 export const getArtist = (artistName) => async (dispatch) => {
   resetAudio()
   
@@ -35,14 +37,12 @@ export const getArtist = (artistName) => async (dispatch) => {
     const response = await axios.get(`https://spotify-api-wrapper.appspot.com/artist/${artistName}`)
 
     const artist0 = response.data.artists.items[0];
-    console.log('yyyyy get artist', artist0);
 
     const { id, images, name, followers, genres } = artist0;
-    const artist = { id, images, name, followers, genres };
+    const artist = { id, imageUrl: images[0].url, name, followers, genres };
 
     // get top tracks for the artist
     const response2 = await axios.get(`https://spotify-api-wrapper.appspot.com/artist/${artist.id}/top-tracks`)
-    console.log('yyyyy get top-tracks', response2.data); 
 
     const {tracks} = response2.data
 

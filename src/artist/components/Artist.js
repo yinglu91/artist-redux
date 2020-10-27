@@ -5,7 +5,7 @@ const Artist = () => {
   const {artist} = useSelector(state =>state.artist )
   if (!artist) return null;
 
-  const { images, name, followers, genres } = artist;
+  const { imageUrl, name, followers, genres } = artist;
 
   return (
     <div>
@@ -13,7 +13,7 @@ const Artist = () => {
       <p>{followers.total} followers</p>
       <p>{genres.join(', ')}</p>
       <img
-        src={images[0] && images[0].url}
+        src={imageUrl}
         alt="artist-profile"
         style={{
           width: 350,

@@ -8,7 +8,7 @@ import { playTrack, togglePlay } from '../../actions/artist'
 
 const TrackList = () => {
   const dispatch = useDispatch()
-  const {tracks, currentTrackName, isPlaying} = useSelector(state =>state.artist )
+  const {tracks, currentPreviewUrl, isPlaying} = useSelector(state =>state.artist )
 
   if (!tracks || tracks.length === 0 ) return null;
 
@@ -17,7 +17,7 @@ const TrackList = () => {
       return <span>N/A</span>;
     }
 
-    if (currentTrackName === track.preview_url && isPlaying) {
+    if (currentPreviewUrl === track.preview_url && isPlaying) {
       return <span onClick={() => dispatch(togglePlay())}>| |</span>;
     } else {
       return <span onClick={() => dispatch(playTrack(track.preview_url))}>&#9654;</span>;
