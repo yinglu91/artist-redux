@@ -12,7 +12,11 @@ const Navbar = () => {
 
       <ul>
         <li>
-          <Link to="/artist">Artist</Link>
+          <Link to="/opera">Opera</Link>
+        </li>
+
+        <li>
+          <Link to="/pop">Pop</Link>
         </li>
       </ul>
     </nav>

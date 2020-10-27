@@ -6,7 +6,7 @@ import TrackList from '../components/TrackList'
 
 const ArtistPage = () => {
   // local state
-  const [artistName, setArtistName] = useState('Whitney Houston');
+  const [artistName, setArtistName] = useState('Maria Callas');
 
   // global state
   const dispatch = useDispatch();
@@ -28,14 +28,11 @@ const ArtistPage = () => {
           onChange={event => setArtistName(event.target.value)}
           value={artistName}
         >
-          <option value="Whitney Houston">Whitney Houston</option>
-          <option value="Michael Jackson">Michael Jackson</option>
-
-          <option value="Johnny Cash">Johnny Cash</option>
-          <option value="Loretta Lynn">Loretta Lynn</option>
-          <option value="Randy Travis">Randy Travis</option>
-
-          <option value="Lady Gaga">Lady Gaga</option>
+          <option value="Maria Callas">Maria Callas</option>
+          <option value="Luciano Pavarotti">Luciano Pavarotti</option>
+          <option value="Joan Sutherland">Joan Sutherland</option>
+          <option value="Renata Tebaldi">Renata Tebaldi</option>
+          <option value="Montserrat Caballe">Montserrat Caballé</option>
         </select>
       </div>
     </div>

@@ -12,10 +12,12 @@ const Landing = () => {
             other developers
           </p>
           <div className="buttons">
-            <Link to="/artist" className="btn btn-primary">
-              Artist
+            <Link to="/opera" className="btn btn-primary">
+              Opera
             </Link>
-           
+            <Link to="/artist" className="btn btn-primary">
+              Pop
+            </Link>
           </div>
         </div>
       </div>
