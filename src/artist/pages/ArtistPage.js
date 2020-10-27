@@ -25,7 +25,6 @@ const ArtistPage = () => {
       <h1>Select Artist</h1>
       <div className="form">
         <select
-          id="selectedArtist"
           onChange={event => setArtistName(event.target.value)}
           value={artistName}
         >

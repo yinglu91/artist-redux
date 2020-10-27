@@ -8,22 +8,22 @@ import {
 } from './types';
 
 export const playTrack = (trackName) => {
-   return ({
+   return {
     type: PLAY_TRACK,
     payload: trackName
-  });
+  };
 }
 
-export const togglePlay = () => (dispatch) => {
-  dispatch({
+export const togglePlay = () => {
+  return {
     type: TOGGLE_PLAY
-  });
+  };
 }
 
-export const resetAudio = () => (dispatch) => {
-  dispatch({
+export const resetAudio = () => {
+  return {
     type: RESET_AUDIO
-  });
+  };
 }
 
 // get artist
