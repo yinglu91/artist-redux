@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artist-deployment
+  namespace: dev-01
+spec:
+  selector:
+    matchLabels:
+      app: artist
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: artist
+    spec:
+      containers:
+        - name: artist
+          image: yinglu91/artist:1.0
+          ports:
+            - containerPort: 80

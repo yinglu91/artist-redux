@@ -48,7 +48,7 @@ export const getArtist = (artistName) => async (dispatch) => {
 
     dispatch({
       type: GET_ARTIST,
-      payload: {artist,tracks}
+      payload: {artist, tracks}
     });
 
   } catch (err) {

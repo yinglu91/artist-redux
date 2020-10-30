@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: artist-srv
+  namespace: dev-01
+  labels:
+    name: artist
+spec:
+  type: NodePort
+  ports:
+    - name: artist
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30007
+  selector:
+    app: artist
+
+
+
+# website:  http://localhost:30007/opera
