@@ -24,3 +24,8 @@ RUN rm -rf ./*
 COPY --from=builder /app/build .
 # Containers run nginx with global directives and daemon off
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
+
+# docker build -t artist-nginx .
+# docker run --rm -it -p 8080:80 artist-nginx
+
+# Navigate to http://localhost:8080, and you should now see our default app!
