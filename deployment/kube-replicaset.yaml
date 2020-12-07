@@ -1,13 +1,15 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: artist-deployment
+  name: artist-replicaset
   namespace: dev-01
+  labels:
+    name: artist
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: artist
-  replicas: 2
   template:
     metadata:
       labels:

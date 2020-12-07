@@ -12,10 +12,7 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30007
+      nodePort: 30080
   selector:
     app: artist
-
-
-
-# website:  http://localhost:30007/opera
+# website:  http://localhost:30080

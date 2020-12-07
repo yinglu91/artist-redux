@@ -1,12 +1,16 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: artist-demo
+  name: artist-pot
   namespace: dev-01
+  labels:
+    app: artist
 spec:
   containers:
-    - name: artist-demo
+    - name: artist
       image: yinglu91/artist:1.0
+      ports:
+        - containerPort: 80
       resources:
         limits:
           memory: '200Mi'
