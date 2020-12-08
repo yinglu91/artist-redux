@@ -1,0 +1,54 @@
+# deployment/kube-deployment-service.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: artist-deployment
+  namespace: dev-01
+spec:
+  selector:
+    matchLabels:
+      app: artist
+  replicas: 2
+  template:
+    metadata:
+      name: artist-pot
+      labels:
+        app: artist
+    spec:
+      containers:
+        - name: artist
+          image: yinglu91/artist:1.0
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: artist-srv
+  namespace: dev-01
+  labels:
+    name: artist
+spec:
+  type: NodePort
+  ports:
+    - name: artist
+      protocol: TCP
+      port: 80
+      targetPort: 80
+      nodePort: 30080
+  selector:
+    app: artist
+# $ kubectl apply -f kube-deployment-service.yaml
+# deployment.apps/artist-deployment created
+# service/artist-srv created
+
+# deployment name: artist-deployment
+# replicaSet name: artist-deployment-56cf4fcf4
+# pod name:        artist-deployment-56cf4fcf4-2k75l
+
+# service name: artist-srv
+# Type: NodePort
+# Cluster IP: 10.100.237.210
+
+# website:  http://localhost:30080
