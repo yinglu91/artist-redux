@@ -16,4 +16,7 @@ spec:
           memory: '200Mi'
         requests:
           memory: '100Mi'
+# $ kubectl apply -f kube-pod.yaml
+# pod/artist-pot created
+
 # pot name: artist-pot
