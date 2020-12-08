@@ -15,4 +15,7 @@ spec:
       nodePort: 30080
   selector:
     app: artist
+# $ kubectl apply -f kube-service.yaml
+# service/artist-srv created
+# service name: artist-srv
 # website:  http://localhost:30080

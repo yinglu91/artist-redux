@@ -16,3 +16,4 @@ spec:
           memory: '200Mi'
         requests:
           memory: '100Mi'
+# pot name: artist-pot

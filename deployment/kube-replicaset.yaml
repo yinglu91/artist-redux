@@ -12,6 +12,7 @@ spec:
       app: artist
   template:
     metadata:
+      name: artist-pot
       labels:
         app: artist
     spec:
@@ -20,3 +21,8 @@ spec:
           image: yinglu91/artist:1.0
           ports:
             - containerPort: 80
+# $ kubectl apply -f kube-replicaset.yaml
+# replicaset.apps/artist-replicaset created
+
+# replicaSet name: artist-replicaset
+# pot name:        artist-replicaset-gqpx5

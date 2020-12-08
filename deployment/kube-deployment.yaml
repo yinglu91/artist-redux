@@ -10,6 +10,7 @@ spec:
   replicas: 2
   template:
     metadata:
+      name: artist-pot
       labels:
         app: artist
     spec:
@@ -18,3 +19,10 @@ spec:
           image: yinglu91/artist:1.0
           ports:
             - containerPort: 80
+# $ kubectl apply -f kube-deployment.yaml
+# deployment.apps/artist-deployment created
+
+# deployment name: artist-deployment
+# replicaSet name: artist-deployment-56cf4fcf4
+# pod name:        artist-deployment-56cf4fcf4-f286b
+
